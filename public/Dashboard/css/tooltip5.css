@@ -1,0 +1,107 @@
+$primary: #FFF;
+$throbber-color: #F7B150;
+
+/**:focus {
+  outline: none;
+}
+
+html {
+  font-family: "lato";
+  height: 100%;
+  background-color: $primary;
+}*/
+
+@keyframes animate-loader-pulsate {
+  50% {
+    box-shadow: 0px 0px 0px 8px lighten($throbber-color, 20);
+  }
+}
+
+.container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-css-throbber {
+  width: 20px;
+  height: 20px;
+  background: $throbber-color;
+  border-radius: 50%;
+  border: 2px solid $throbber-color;
+  animation: animate-loader-pulsate 2s ease-in infinite;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
+  
+  &:active {
+    background: darken($throbber-color, 10);
+  }
+}
+
+.tooltip {
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  padding: 20px;
+  border: 1px solid #bebebe;
+  width: 400px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.tooltip-header {
+  font-weight: 600;
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+.tooltip-paragraph {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tooltip-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 12px 20px;
+  background: none;
+  border: 0;
+  color: #008AE8;
+  
+  &:hover {
+    background: #FAFAFA;
+  }
+  
+  &:active {
+    background: darken(#FAFAFA, 5)
+  }
+}
+
+/*ng-animate stuff*/
+
+.tooltip.ng-enter, .tooltip.ng-leave {
+  transition:all 0.4s;
+}
+
+.tooltip.ng-enter,
+.tooltip.ng-leave.ng-leave-active {
+  opacity:0;
+  top: 30px;
+}
+
+.tooltip.ng-leave,
+.tooltip.ng-enter.ng-enter-active {
+  opacity:1;
+  top: 50px;
+}
