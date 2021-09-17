@@ -52,7 +52,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item">               
+              <a class="dropdown-item preview-item">
                 <i class="icon-head"></i> Profile
               </a>
               <a href="{{ route('logout') }}" class="dropdown-item preview-item">
@@ -101,7 +101,7 @@
                           </th>
                           <th width="200px">
                             <center>
-                              <span class="thead-detail-component">Created at</span> 
+                              <span class="thead-detail-component">Created at</span>
                             </center>
                           </th>
                           <th>
@@ -121,12 +121,12 @@
                           <th align="text-center">
                             <center>
                               <span class="tbody-detail-component">{{ $project->project_desc }}</span>
-                            </center> 
+                            </center>
                           </th>
                           <th>
                             <center>
                               <span class="tbody-detail-component">{{ $project->created_at }}</span>
-                            </center> 
+                            </center>
                           </th>
                           <th>
                             <center>
@@ -138,7 +138,7 @@
                       </tbody>
                     </table>
                   </div>
-                </div>               
+                </div>
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@
                           <span><a type="button" style="color: #4C12AB;" data-toggle="modal" data-target="#exampleModal" >Click here</a> to create one or the violet button on the nav bar </span>
                         </div>
                       </center>
-                      @php 
+                      @php
                         } else {
                       @endphp
                       <table class="table" id="table-detail-element">
@@ -215,7 +215,7 @@
                         }
                       @endphp
                     </div>
-                    
+
                     <input type="radio" name="tabs" id="tabtwo">
                     <label class="ml-3" for="tabtwo">SWOT</label>
                     <div class="tab mt-3">
@@ -231,7 +231,7 @@
                           <span><a type="button" style="color: #4C12AB;" data-toggle="modal" data-target="#exampleModal" >Click here</a> to create one or the violet button on the nav bar </span>
                         </div>
                       </center>
-                      @php 
+                      @php
                         } else {
                       @endphp
                       <table class="table" id="table-element-swot">
@@ -267,7 +267,7 @@
                       @php
                         }
                       @endphp
-                    </div>            
+                    </div>
                     <input type="radio" name="tabs" id="tabthree">
                     <label class="ml-3" for="tabthree">Lean Canvas</label>
                     <div class="tab mt-3">
@@ -283,7 +283,7 @@
                           <span><a type="button" style="color: #4C12AB;" data-toggle="modal" data-target="#exampleModal" >Click here</a> to create one or the violet button on the nav bar </span>
                         </div>
                       </center>
-                      @php 
+                      @php
                         } else {
                       @endphp
                       <table class="table" id="table-element-lean">
@@ -336,7 +336,7 @@
                           <span><a type="button" style="color: #4C12AB;" data-toggle="modal" data-target="#exampleModal" >Click here</a> to create one or the violet button on the nav bar </span>
                         </div>
                       </center>
-                      @php 
+                      @php
                         } else {
                       @endphp
                       <table class="table" id="table-element-projectstatement">
@@ -389,7 +389,7 @@
                           <span><a type="button" style="color: #4C12AB;" data-toggle="modal" data-target="#exampleModal" >Click here</a> to create one or the violet button on the nav bar </span>
                         </div>
                       </center>
-                      @php 
+                      @php
                         } else {
                       @endphp
                       <table class="table" id="table-element-persona">
@@ -442,7 +442,7 @@
                           <span><a type="button" style="color: #4C12AB;" data-toggle="modal" data-target="#exampleModal" >Click here</a> to create one or the violet button on the nav bar </span>
                         </div>
                       </center>
-                      @php 
+                      @php
                         } else {
                       @endphp
                       <table class="table" id="table-element-userstory">
@@ -487,7 +487,7 @@
                       @endphp
                     </div>
                   </div>
-                </div>              
+                </div>
               </div>
             </div>
           </div>
@@ -533,7 +533,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="swot_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/SWOT.svg')}}" alt="SWOT">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/SWOT.svg')}}" alt="SWOT">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">What is SWOT ?</span><br>
@@ -547,7 +547,9 @@
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
                     <div class="mt-3">
-                      <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
+                        <div>
+                            <a href="{{route('preview.swot')}}"  class="btn-create-document" style="color:#FFFFFF" role="button">Preview </a>
+                        </div>
                     </div>
                   </form>
                   @endforeach
@@ -562,7 +564,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="comparison_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/comparison-matrix-2.jpg')}}" alt="SWOT">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/comparison-matrix-2.jpg')}}" alt="SWOT">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">What is Comparison Matrix ?</span><br>
@@ -576,7 +578,7 @@
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
                   </form>
-                  @endforeach 
+                  @endforeach
                 </div>
 
                 <div id="leanCanvas" class="tabcontent">
@@ -588,7 +590,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="lean_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/lean-canvas.png')}}" alt="SWOT">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/lean-canvas.png')}}" alt="SWOT">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">What is Lean Canvas ?</span><br>
@@ -602,7 +604,7 @@
                       <button type="submit" value="submit" class="btn-create-document" for="createLean">Create</button>
                     </div>
                   </form>
-                  @endforeach 
+                  @endforeach
                 </div>
 
                 <div id="projectStatement" class="tabcontent">
@@ -614,7 +616,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="project_statement_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/project-statement.png')}}" alt="SWOT">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/project-statement.png')}}" alt="SWOT">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">What is Project Statement</span><br>
@@ -642,7 +644,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="persona_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/user-persona.jpeg')}}" alt="User Persona">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/user-persona.jpeg')}}" alt="User Persona">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">What is User Persona ?</span><br>
@@ -670,7 +672,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="journey_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/journey-map.jpg')}}" alt="Journey Map">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/journey-map.jpg')}}" alt="Journey Map">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">Description</span><br>
@@ -698,7 +700,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="empathy_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/empathy-mao.webp')}}" alt="Empathy Map">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/empathy-mao.webp')}}" alt="Empathy Map">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">Description</span><br>
@@ -726,7 +728,7 @@
                     </div>
                     <input class="modal-document-input mt-3 mb-4" type="text" name="story_name" placeholder="Make it an informative name">
                     <center>
-                      <img class="tabcontent-img" src="{{asset('modalDocument/user-story-1.png')}}" alt="SWOT">   
+                      <img class="tabcontent-img" src="{{asset('modalDocument/user-story-1.png')}}" alt="SWOT">
                     </center>
                     <div class="mt-4 mb-3" style="text-align: justify;">
                       <span class="document-description-title">What is User Story</span><br>
@@ -933,7 +935,7 @@
         </form>
       </div>
     </div>
-  </div>  
+  </div>
   <!-- end-modal-EDIT-project -->
   @endforeach
   <!-- container-scroller -->

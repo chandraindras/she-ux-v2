@@ -23097,10 +23097,20 @@ dl li {
   border-color:none;
 }
 
+@media screen and (max-device-width: 990px) {
+    .btn-image {
+        top: 95px!important;
+    }
+}
+
 .line-faq{
 width: 1200px;
 height: 0px;
 
 border: 1px solid #E2DDE8;
 }
+
+
 /*# sourceMappingURL=maps/style.css.map */
+
+

@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        dd(auth()->user(), Project::where('email_user', '=', auth()->user()->email));
+//        dd(auth()->user(), Project::where('email_user', '=', auth()->user()->email));
     	$countProject = Project::where('email_user', '=', Auth::user()->email)->count();
     	$countInvitationProject = Projectmember::where('email', '=', Auth::user()->email)->count();
     	$date = Carbon::now();

@@ -134,8 +134,8 @@
               if (Auth::user()->image === NULL) {
             @endphp
               <img src="{{('modalDocument/no-avatar (3).png')}}">
-              <button type="button" id="btn1" class="btn-image" data-toggle="modal" data-target="#addImage">
-                <img src="{{('modalDocument/edit-avatar.svg')}}" style="width: 25px;height: 25px;">
+              <button type="button" id="btn1" class="btn-image " data-toggle="modal" data-target="#addImage">
+                <img src="{{('modalDocument/edit-avatar.svg')}}" style="width: 25px;height: 25px;>
               </button>
             @php
               } else {
