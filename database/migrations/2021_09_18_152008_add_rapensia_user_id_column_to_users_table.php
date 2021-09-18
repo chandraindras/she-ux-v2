@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCreateGunawansTablesTable extends Migration
+class AddRapensiaUserIdColumnToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateCreateGunawansTablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('create_gunawans_tables', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('rapensia_user_id')->after('facebook_id')->index();
         });
     }
 
@@ -26,6 +25,8 @@ class CreateCreateGunawansTablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('create_gunawans_tables');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

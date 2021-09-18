@@ -41,7 +41,7 @@ html {
 }
 
 body, p {
-	color: #6c717b; 
+	color: #6c717b;
 	font: 400 1rem/1.625rem "Open Sans", sans-serif;
 }
 
@@ -223,15 +223,15 @@ a:hover {
 .btn-outline-sm {
 	display: inline-block;
 	padding: 1rem 1.5rem 1rem 1.5rem;
-	border: 1px solid #cc2973;
 	border-radius: 30px;
-	background-color: transparent;
-	color: #cc2973;
 	font-weight: 600;
 	font-size: 0.875rem;
 	line-height: 0;
 	text-decoration: none;
 	transition: all 0.2s;
+    color: #fff;
+    background-color: #4C12AB;
+    border-color: #4C12AB;
 }
 
 .btn-outline-sm:hover {
@@ -448,7 +448,7 @@ a:hover {
 	opacity: 0.7;
 }
 
-.header div[class*="col"] {  
+.header div[class*="col"] {
 	/* selects all elements which have classes starting with col */
 	/* needed so that the absolute positioned decoration stays behind */
 	position: relative;
@@ -534,7 +534,7 @@ a:hover {
 	opacity: 0.7;
 }
 
-.basic-2 div[class*="col"] {  
+.basic-2 div[class*="col"] {
 	/* selects all elements which have classes starting with col */
 	/* needed so that the absolute positioned decoration stays behind */
 	position: relative;
@@ -654,7 +654,7 @@ a:hover {
 	opacity: 0.7;
 }
 
-.basic-3 div[class*="col"] {  
+.basic-3 div[class*="col"] {
 	/* selects all elements which have classes starting with col */
 	/* needed so that the absolute positioned decoration stays behind */
 	position: relative;
@@ -809,7 +809,7 @@ a:hover {
 	opacity: 0.7;
 }
 
-.form-1 div[class*="col"] {  
+.form-1 div[class*="col"] {
 	/* selects all elements which have classes starting with col */
 	/* needed so that the absolute positioned decoration stays behind */
 	position: relative;
@@ -901,18 +901,18 @@ a:hover {
 /*     Back To Top Button     */
 /******************************/
 #myBtn {
-	position: fixed; 
-  	z-index: 99; 
-	bottom: 20px; 
-	right: 20px; 
-	display: none; 
+	position: fixed;
+  	z-index: 99;
+	bottom: 20px;
+	right: 20px;
+	display: none;
 	width: 52px;
 	height: 52px;
-	border: none; 
-	border-radius: 50%; 
-	outline: none; 
-	background-color: #44434a; 
-	cursor: pointer; 
+	border: none;
+	border-radius: 50%;
+	outline: none;
+	background-color: #44434a;
+	cursor: pointer;
 }
 
 #myBtn:hover {
@@ -981,7 +981,7 @@ a:hover {
 
 /*************************/
 /*     Media Queries     */
-/*************************/	
+/*************************/
 /* Min-width 768px */
 @media (min-width: 768px) {
 
@@ -996,7 +996,7 @@ a:hover {
 		left: -150px;
 		width: 300px;
 	}
-	
+
 	.header .decoration-star-2 {
 		top: 140px;
 		right: -200px;
@@ -1028,7 +1028,7 @@ a:hover {
 		left: -150px;
 		width: 300px;
 	}
-	
+
 	.form-1 .decoration-star-2 {
 		right: -200px;
 		width: 400px;
@@ -1047,7 +1047,7 @@ a:hover {
 
 /* Min-width 992px */
 @media (min-width: 992px) {
-	
+
 	/* General Styles */
 	.h2-heading {
 		width: 35.25rem;
@@ -1104,7 +1104,7 @@ a:hover {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-	
+
 	.navbar .nav-item .nav-link {
 		padding-right: 0.75rem;
 		padding-left: 0.75rem;
@@ -1145,7 +1145,7 @@ a:hover {
 		margin-right: 0;
 		margin-left: 0;
 	}
-	
+
 	.header .btn-solid-lg {
 		margin-right: 0.5rem;
 	}
@@ -1216,7 +1216,7 @@ a:hover {
 		max-width: 100%;
 		vertical-align: top;
 	}
-	
+
 	.cards-2 .card:nth-of-type(3n+2) {
 		margin-right: 1.5rem;
 		margin-left: 1.5rem;
@@ -1232,7 +1232,7 @@ a:hover {
 	.form-1 .decoration-star {
 		top: 260px;
 	}
-	
+
 	.form-1 .decoration-star-2 {
 		top: 240px;
 	}
@@ -1254,14 +1254,14 @@ a:hover {
 		margin-right: 1.75rem;
 		vertical-align: top;
 	}
-	
+
 	.footer .footer-col.second {
 		display: inline-block;
 		width: 320px;
 		margin-right: 1.75rem;
 		vertical-align: top;
 	}
-	
+
 	.footer .footer-col.third {
 		display: inline-block;
 		width: 224px;
@@ -1294,13 +1294,13 @@ a:hover {
 
 /* Min-width 1200px */
 @media (min-width: 1200px) {
-	
+
 	/* General Styles */
 	.container {
 		max-width: 1140px;
 	}
 	/* end of general styles */
-	
+
 
 	/* Header */
 	.header {
@@ -1317,7 +1317,7 @@ a:hover {
 		left: -200px;
 		width: 500px;
 	}
-	
+
 	.header .decoration-star-2 {
 		top: 150px;
 		right: -200px;
@@ -1341,7 +1341,7 @@ a:hover {
 		margin-left: 3.5rem;
 		width: 180px;
 	}
-	
+
 	.counter .counter-cell:first-of-type {
 		margin-left: 0;
 	}
@@ -1389,7 +1389,7 @@ a:hover {
 	.cards-1 .card:nth-of-type(3n+1) {
 		margin-left: 0;
 	}
-	
+
 	.cards-1 .card:nth-of-type(3n+3) {
 		margin-right: 0;
 	}
@@ -1446,7 +1446,7 @@ a:hover {
 		left: -300px;
 		width: 600px;
 	}
-	
+
 	.form-1 .decoration-star-2 {
 		top: 140px;
 		right: -300px;
@@ -1468,11 +1468,11 @@ a:hover {
 		width: 352px;
 		margin-right: 6rem;
 	}
-	
+
 	.footer .footer-col.second {
 		margin-right: 6.5rem;
 	}
-	
+
 	.footer .footer-col.third {
 		text-align: right;
 	}
@@ -1495,20 +1495,20 @@ a:hover {
 
 /* Min-width 1400px */
 @media (min-width: 1400px) {
-	
+
 	/* Header */
 	/*.header .decoration-star {
 		top: 120px;
 		left: -250px;
 		width: 600px;
 	}
-	
+
 	.header .decoration-star-2 {
 		top: 60px;
 		right: -300px;
 		width: 700px;
 	}*/
 	/* end of header */
-	
+
 }
 /* end of min-width 1400px */

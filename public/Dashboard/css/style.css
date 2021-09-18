@@ -7415,7 +7415,7 @@
     -moz-transform-origin: left bottom 50%;
     -ms-transform-origin: left bottom 50%;
     -o-transform-origin: left bottom 50%;
-    transform-origin: left bottom 50%;
+    -transform-origin: left bottom 50%;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
@@ -14472,7 +14472,6 @@ a.close.disabled {
   font-weight: 500;
   font-size: 14px;
   color: #B7ABBC;
-  border
 }
 .modal-open {
   overflow: hidden;

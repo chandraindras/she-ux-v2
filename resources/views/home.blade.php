@@ -7,23 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>SheUX</title>
   <!-- base:css -->
-  <link rel="stylesheet" href="{{('Dashboard/vendors/mdi/css/materialdesignicons.min.css')}}">
-  <link rel="stylesheet" href="{{('Dashboard/vendors/feather/feather.css')}}">
-  <link rel="stylesheet" href="{{('Dashboard/vendors/base/vendor.bundle.base.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/mdi/css/materialdesignicons.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/feather/feather.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/base/vendor.bundle.base.css')}}">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="{{('Dashboard/vendors/flag-icon-css/css/flag-icon.min.css')}}"/>
-  <link rel="stylesheet" href="{{('Dashboard/vendors/font-awesome/css/font-awesome.min.css')}}">
-  <link rel="stylesheet" href="{{('Dashboard/vendors/jquery-bar-rating/fontawesome-stars-o.css')}}">
-  <link rel="stylesheet" href="{{('Dashboard/vendors/jquery-bar-rating/fontawesome-stars.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/flag-icon-css/css/flag-icon.min.css')}}"/>
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/font-awesome/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/jquery-bar-rating/fontawesome-stars-o.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/vendors/jquery-bar-rating/fontawesome-stars.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{('Dashboard/css/style.css')}}">
-  <link rel="stylesheet" href="{{('Dashboard/css/upload-image.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('Dashboard/css/upload-image.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{('Dashboard/images/favicon.png')}}" />
-  <link rel="stylesheet" href="{{('node_modules/node_modules/shepherd.js/dist/css/shepherd.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome-free-5.14.0-web/css/all.css') }}">
+  <link rel="shortcut icon" href="{{asset('Dashboard/images/favicon.png')}}" />
+  <link rel="stylesheet" href="{{asset('node_modules/node_modules/shepherd.js/dist/css/shepherd.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('fontawesome-free-5.14.0-web/css/all.css') }}">
   <link href="{{asset('tiny-tour-master/dist/tour.min.css')}}" rel="stylesheet" type="text/css" />
   <script src="{{asset('tiny-tour-master/dist/tour.min.js')}}" rel="stylesheet" type="text/javascript"></script>
 </head>

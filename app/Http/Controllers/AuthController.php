@@ -13,11 +13,11 @@ class AuthController extends Controller
 {
     public function showFormLogin()
     {
-        if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
-            //Login Success
-            return redirect()->route('home');
-        }
-        return view('auth.login');
+//        if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
+//            //Login Success
+//            return redirect()->route('home');
+//        }
+        return route('oauth.redirect');
     }
 
     public function login(Request $request)
@@ -60,7 +60,7 @@ class AuthController extends Controller
 
     public function showFormRegister()
     {
-        return view('auth.register');
+        return route('oauth.redirect');
     }
 
     public function register(Request $request)

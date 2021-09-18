@@ -18,7 +18,7 @@
 	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-    <title>Article Details</title>
+    <title>Preview SWOT</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="{{asset('preview/images/logo.svg')}}" alt="alternative"></a>
+            <a class="navbar-brand logo-image">Shera</a>
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
             <!-- <a class="navbar-brand logo-text" href="index.html">Yavin</a> -->
@@ -72,13 +72,12 @@
                     </li>
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-outline-sm" href="index.html#contact">Contact us</a>
+                    <a class="btn-outline-sm" href="{{ url('/home') }}" role="button">Go to Dashboard</a>
                 </span>
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-
 
     <!-- Header -->
     <header class="ex-header bg-gray">
@@ -92,37 +91,41 @@
     </header> <!-- end of ex-header -->
     <!-- end of header -->
 
-
     <!-- Basic -->
     <div class="ex-basic-1 pt-5 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-fluid mt-5 mb-3" src="{{asset('preview/images/article-details-large.jpg')}}" alt="alternative">
+                <div class="col-lg-5">
+                    <p>Consulted he eagerness unfeeling deficient existence of. Calling nothing end fertile for venture way boy.</p>
+                    <div class="mt-3">
+                        <button type="submit" value="submit" class="btn-outline-sm" for="createSwot">Use Template</button>
+                    </div>
+                    <img class="img-fluid mt-5 mb-10" src="{{asset('preview/images/SWOT.png')}}" alt="alternative">
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of ex-basic-1 -->
     <!-- end of basic -->
-
 
     <!-- Basic -->
     <div class="ex-basic-1 pt-4">
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
-                    <p>Consulted he eagerness unfeeling deficient existence of. Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Last sentence of words thus better.</p>
-                    <p class="mb-5">Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr recurred carriage. Way mrs end gave fat skin brown yesterday tall walk fact bed.</p>
+                    <h2 class="mb-3">What is SWOT?</h2>
+                    <p>When you’re developing a business strategy, it can be hard to figure out what to focus on. A SWOT analysis template helps you hone in on key factors.</p>
+                    <p class="mb-5">SWOT stands for Strengths, Weaknesses, Opportunities, and Threats. Strengths and weaknesses are internal factors, like your employees, intellectual property, marketing strategy, and location. Opportunities and threats, by contrast, are usually external factors, like market fluctuations, competition, prices of raw materials, and consumer trends. </p>
 
-                    <h2 class="mb-3">Advantages of working with this package</h2>
-                    <p>High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing be on perceive my laughing so. Ye on properly handsome returned throwing am no whatever.</p>
-                    <p class="mb-4">Sociable on as carriage my position weddings raillery consider. Peculiar trifling absolute and wandered vicinity property yet. The and collecting motionless difficulty son. His hearing staying ten colonel met. Word drew six easy four dear cold deny. Fulfilled direction use continual set him propriety continued. Saw met applauded favourite deficient.</p>
+                    <h2 class="mb-3">What is an example of a SWOT analysis template in Shera?</h2>
+                    <p class="mb-5">The SWOT analysis template in Miro has an easy-to-use format, and it can be customizable according to your needs. You can keep it simple by adding the key four areas of the SWOT analysis, or you can add more blocks and deep dive into your organization’s weaknesses and strengths.</p>
+
+                    <h2 class="mb-3">How do I write a SWOT Analysis?</h2>
+                    <p class="mb-5">Determine the objectives of your SWOT analysis: what do you want to get out of it? What problem are you trying to solve? Who are the stakeholders, and how can you address the issues that might come to the surface? After you defined your overall objective, you can go into detail and perform the SWOT analysis focusing on the four key areas: Strengths, Weaknesses, Opportunities, and Threats.</p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of ex-basic-1 -->
-    <!-- end of basic -->
-
+    <!-- end of basic --> <!-- Basic -->
 
     <!-- Cards -->
     <div class="ex-cards-1 pt-3 pb-3">
@@ -234,6 +237,82 @@
     </div> <!-- end of ex-basic-1 -->
     <!-- end of basic -->
 
+    <!-- Projects -->
+    <div id="projects" class="cards-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Related Templates</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
+                        <div class="card-body">
+                            <h5 class="card-title">Comparison Matrix</h5>
+                            <p class="card-text">Suffer should if waited common person little ans words are needed oh <a class="blue no-line" href="article.html">...Read more</a></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
+                        <div class="card-body">
+                            <h5 class="card-title">Lean Canvas</h5>
+                            <p class="card-text">In to am attended desirous raptures declared diverted confined at collected <a class="blue no-line" href="article.html">...Read more</a></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Statement</h5>
+                            <p class="card-text">Instantly remaining up certainly to necessary as over walk dull into son <a class="blue no-line" href="article.html">...Read more</a></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
+                        <div class="card-body">
+                            <h5 class="card-title">User Persona</h5>
+                            <p class="card-text">Vent new at or happiness commanded daughters as is handsome an <a class="blue no-line" href="article.html">...Read more</a></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <img class="img-fluid" src="images/project-5.jpg" alt="alternative">
+                        <div class="card-body">
+                            <h5 class="card-title">User Story</h5>
+                            <p class="card-text">Vicinity subjects more words into miss on he over been late pain an only <a class="blue no-line" href="article.html">...Read more</a></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <img class="img-fluid" src="images/project-6.jpg" alt="alternative">
+                        <div class="card-body">
+                            <h5 class="card-title">Empathy Map</h5>
+                            <p class="card-text">Match round scale now sex style far times your me past and who now much <a class="blue no-line" href="article.html">...Read more</a></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-2 -->
+    <!-- end of projects -->
 
     <!-- Footer -->
     <div class="footer bg-gray">
@@ -285,19 +364,12 @@
     </div> <!-- end of footer -->
     <!-- end of footer -->
 
-
     <!-- Copyright -->
     <div class="copyright bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © <a href="#your-link">Your name</a></p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Distributed By <a href="https://themewagon.com/">Themewagon</a></p>
+                    <p class="p-small">Copyright © Electronic Engineering Polytechnic Institute of Surabaya and Rasyid Institue</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->

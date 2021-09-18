@@ -37,9 +37,15 @@ return [
     ],
 
    'facebook' => [
-    'client_id' => '933088453844445',
-    'client_secret' => '64a53ef3b50f6e8a5ad3e2d30d1196ea',
-    'redirect' => 'http://127.0.0.1:8000/callback/facebook',
-  ], 
+        'client_id' => '933088453844445',
+        'client_secret' => '64a53ef3b50f6e8a5ad3e2d30d1196ea',
+        'redirect' => 'http://127.0.0.1:8000/callback/facebook',
+    ],
+
+    'oauth-test' => [
+        'client_id' => env('OAUTH_TEST_CLIENT_ID'),
+        'client_secret' => env('OAUTH_TEST_CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8000/oauth/callback',
+    ]
 
 ];
