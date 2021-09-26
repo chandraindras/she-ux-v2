@@ -46,6 +46,12 @@ return [
         'client_id' => env('OAUTH_TEST_CLIENT_ID'),
         'client_secret' => env('OAUTH_TEST_CLIENT_SECRET'),
         'redirect' => 'http://localhost:8000/oauth/callback',
-    ]
+    ],
 
+    'rapensia' => [
+        'client_id' => env('RAPENSIA_OAUTH_CLIENT_ID'),
+        'client_secret' => env('RAPENSIA_OAUTH_CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8000/rapensia/oauth/callback',
+//        'redirect' => 'https://shera.rapensia.com/rapensia/oauth/callback',
+    ]
 ];

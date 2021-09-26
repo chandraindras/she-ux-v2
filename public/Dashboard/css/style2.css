@@ -13205,7 +13205,7 @@ input[type="button"].btn-block {
 }
 
 .table-detail-component{
-  
+
 }
 
 .card {
@@ -13640,7 +13640,7 @@ input[type="button"].btn-block {
 }
 
 a.table-document-name, a.fas:hover{
-text-decoration: none;  
+text-decoration: none;
 
 }
 a.badge:hover, a.badge:focus {
@@ -23348,7 +23348,11 @@ dl li {
   transition: all 0.4s;
   filter: drop-shadow(0px 4px 4px rgba(101,53,180,1));
 }
-
+.btn-preview-document{
+    margin-top: -2.5rem;
+    margin-left: -8rem;
+    width: 100%;
+}
 .btn-preview{
   display: -webkit-box;
   display: -webkit-flex;

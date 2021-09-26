@@ -33,8 +33,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('logout', 'AuthController@logout')->name('logout');
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('preview/swot', 'PreviewController@swot')->name('preview.swot');
-
     /*----------- PROJECT -----------*/
     Route::get('project/your', 'ProjectController@yourProject');
     Route::get('project/invitation', 'ProjectController@invitationProject');

@@ -546,9 +546,9 @@
                     <div class="mt-3">
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
-                    <div class="mt-3">
+                    <div class="btn-preview-document">
                         <div>
-                            <a href="{{route('preview.swot')}}"  class="btn-create-document" style="color:#FFFFFF" role="button">Preview </a>
+                            <a href="{{route('preview.swot')}}"  class="btn-create-document" role="button">Preview </a>
                         </div>
                     </div>
                   </form>
@@ -577,6 +577,11 @@
                     <div class="mt-3">
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
+                      <div class="btn-preview-document">
+                          <div>
+                              <a href="{{route('preview.comparison-matrix')}}"  class="btn-create-document" role="button">Preview </a>
+                          </div>
+                      </div>
                   </form>
                   @endforeach
                 </div>
@@ -603,6 +608,11 @@
                     <div class="mt-3">
                       <button type="submit" value="submit" class="btn-create-document" for="createLean">Create</button>
                     </div>
+                      <div class="btn-preview-document">
+                          <div>
+                              <a href="{{route('preview.lean-canvas')}}"  class="btn-create-document" role="button">Preview </a>
+                          </div>
+                      </div>
                   </form>
                   @endforeach
                 </div>
@@ -631,6 +641,11 @@
                     <div class="mt-3">
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
+                      <div class="btn-preview-document">
+                          <div>
+                              <a href="{{route('preview.project-statement')}}"  class="btn-create-document" role="button">Preview </a>
+                          </div>
+                      </div>
                   </form>
                   @endforeach
                 </div>
@@ -659,6 +674,11 @@
                     <div class="mt-3">
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
+                      <div class="btn-preview-document">
+                          <div>
+                              <a href="{{route('preview.user-persona')}}"  class="btn-create-document" role="button">Preview </a>
+                          </div>
+                      </div>
                   </form>
                   @endforeach
                 </div>
@@ -743,6 +763,11 @@
                     <div class="mt-3">
                       <button type="submit" value="submit" class="btn-create-document" for="createSwot">Create</button>
                     </div>
+                      <div class="btn-preview-document">
+                          <div>
+                              <a href="{{route('preview.user-story')}}"  class="btn-create-document" role="button">Preview </a>
+                          </div>
+                      </div>
                   </form>
                   @endforeach
                 </div>
