@@ -118,7 +118,7 @@
                     <div class="col-lg-2 grid-margin stretch-card ml-2">
                       <div class="card" style="background-color: #E46F39;  min-height: 20rem; border-radius: 10px;">
                         <div class="ml-4 mt-4 call-tooltip bottom" >
-                          <span class="title step" id="step4" data-tip="">SOLUTION</span>                          
+                          <span class="title step" id="step4" data-tip="">SOLUTION</span>
                           <div class="tooltip" style="width: 320px; height: 300px; z-index: 1;">
                             <br>
                             <span style="text-align: justify-all; font-size: 14px;"><!-- <i class="fas fa-hand-point-right"></i>  -->Solutions are answers to predefined problems. If the mentioned problems are 2, then the solution must also be 2. The problem and solution must have the same number.</span>
@@ -754,7 +754,7 @@
                       </div>
                     </div>
                   </div>
-              </div>  
+              </div>
             </div>
           </div>
           @endforeach
@@ -776,7 +776,7 @@
         @php
           $problem = explode('+', $data->problem);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($problem as $key => $arrayProblem)
             <form method="POST" action="{{ url('/lean/edit-problem/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -809,7 +809,7 @@
         @php
           $existing = explode('+', $data->existing_alternative);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($existing as $key => $arrayExisting)
             <form method="POST" action="{{ url('/lean/edit-existing/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -842,7 +842,7 @@
         @php
           $solution = explode('+', $data->solution);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($solution as $key => $arraySolution)
             <form method="POST" action="{{ url('/lean/edit-solution/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -876,7 +876,7 @@
         @php
           $keyMetric = explode('+', $data->key_metric);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($keyMetric as $key => $arrayKeyMetric)
             <form method="POST" action="{{ url('/lean/edit-key-metric/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -910,7 +910,7 @@
         @php
           $uvp = explode('+', $data->unique_value);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($uvp as $key => $arrayUvp)
             <form method="POST" action="{{ url('/lean/edit-uvp/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -944,7 +944,7 @@
         @php
           $hlc = explode('+', $data->high_level_concept);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($hlc as $key => $arrayHlc)
             <form method="POST" action="{{ url('/lean/edit-hlc/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -978,7 +978,7 @@
         @php
           $advantage = explode('+', $data->unfair_advantage);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($advantage as $key => $arrayAdvantage)
             <form method="POST" action="{{ url('/lean/edit-unfair-advantage/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -1012,7 +1012,7 @@
         @php
           $channel = explode('+', $data->channel);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($channel as $key => $arrayChannel)
             <form method="POST" action="{{ url('/lean/edit-channel/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -1046,7 +1046,7 @@
         @php
           $customer = explode('+', $data->customer_segment);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($customer as $key => $arrayCustomer)
             <form method="POST" action="{{ url('/lean/edit-customer-segment/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -1080,7 +1080,7 @@
         @php
           $earlyAdopter = explode('+', $data->early_adopter);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($earlyAdopter as $key => $arrayEarlyAdopter)
             <form method="POST" action="{{ url('/lean/edit-early-adopter/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -1114,7 +1114,7 @@
         @php
           $cost = explode('+', $data->cost_structure);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($cost as $key => $arrayCost)
             <form method="POST" action="{{ url('/lean/edit-cost/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -1148,7 +1148,7 @@
         @php
           $revenue = explode('+', $data->revenue_stream);
         @endphp
-          <div class="modal-body"> 
+          <div class="modal-body">
             @foreach ($revenue as $key => $arrayRevenue)
             <form method="POST" action="{{ url('/lean/edit-revenue/'. $key.'/'. $data->id_lean) }}">
               @csrf
@@ -1180,7 +1180,7 @@
             </div>
             <div class="col-lg-6 ml-auto">
               <span class="font-invite-member" style="position: relative; top: 2rem;">
-                <center>Invite Member</center>                
+                <center>Invite Member</center>
               </span>
               <span class="font-sub-invite" style=""><center>Make sure that your member email has been registered in the application</center></span>
               <form method="POST" id="inviteMember" action="{{ url('/invite/member', $datas->id) }}"style="position: relative; padding-top: 4rem;">
@@ -1188,7 +1188,7 @@
                 <center><input type="text" class="input-invite-member" placeholder="Email" name="email"></center>
                 <input type="hidden" name="role" value="0">
                 <div class="btn-invite-position">
-                 <center><button type="submit" value="submit" class="btn-invite-member " for="inviteMember">Send Invitation</button></center> 
+                 <center><button type="submit" value="submit" class="btn-invite-member " for="inviteMember">Send Invitation</button></center>
                 </div>
               </form>
             </div>
@@ -1365,7 +1365,7 @@
   </script>
   <script>
     $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip().tooltip('show');   
+      $('[data-toggle="tooltip"]').tooltip().tooltip('show');
     });
   </script>
 </body>

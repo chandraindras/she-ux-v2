@@ -107,7 +107,6 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
             <img src="{{('LandingPage/assets/img/about.jpg')}}" class="img-fluid" alt="">
@@ -279,9 +278,7 @@
               <p>A tool to get description of a product's features</p>
             </div>
           </div> -->
-          
         </div>
-
       </div>
     </section><!-- End Services Section -->
 
@@ -334,7 +331,6 @@
         </div>
 
         <div class="owl-carousel testimonials-carousel">
-
           <div class="testimonial-item">
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -389,9 +385,7 @@
             <h3>John Larson</h3>
             <h4>Entrepreneur</h4>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Testimonials Section -->
 
@@ -575,7 +569,7 @@
                     </div>
                 </div>
             </div><!--end col-->
-            
+
             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div class="team text-center rounded p-3 py-4">
                     <img src="{{('LandingPage/assets/img/team/Foto_Maulidan - Rasyid Maulidan Games-2.jpg')}}" class="img-fluid avatar avatar-medium shadow rounded-pill" alt="">
@@ -593,7 +587,7 @@
                     </div>
                 </div>
             </div><!--end col-->
-            
+
             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div class="team text-center rounded p-3 py-4">
                     <img src="{{('LandingPage/assets/img/team/Avatar12.png')}}" class="img-fluid avatar avatar-medium shadow rounded-pill" alt="">
@@ -611,7 +605,7 @@
                     </div>
                 </div>
             </div><!--end col-->
-            
+
             <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div class="team text-center rounded p-3 py-4">
                     <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-medium shadow rounded-pill" alt="">
@@ -718,7 +712,7 @@
               <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-1">How to use the application ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
                 <p>
-                  Tata cara penggunaan aplikasi dapat dilihat melalui link di bawah ini 
+                  Tata cara penggunaan aplikasi dapat dilihat melalui link di bawah ini
                   <a href="https://drive.google.com/file/d/1sGZMVeA9D-GCg43Q5ZWC1u7pUawOwvw9/view?usp=sharing">Tutorial SheUX</a>
                 </p>
               </div>
@@ -836,7 +830,7 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
                   @if ($message = Session::get('success'))
                       <div class="alert alert-success alert-block">
-                      <button type="button" class="close" data-dismiss="alert">×</button> 
+                      <button type="button" class="close" data-dismiss="alert">×</button>
                         <strong>{{ $message }}</strong>
                       </div>
                   @endif

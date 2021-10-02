@@ -162,8 +162,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/persona/edit-quote/{id}', 'UserPersonaController@editQuote');
     Route::post('/persona/edit-bio/{id}', 'UserPersonaController@editBio');
     Route::post('/persona/edit-media/{id}', 'UserPersonaController@editMedia');
-
     Route::post('/change-profile/{id}', 'UserController@editProfilePicture');
+    Route::get('/lean-canvas/cetak-pdf/{id}','LeanCanvasController@print')->name('cetak-lean-canvas');
 });
 
 Route::get('/documentation', function () {

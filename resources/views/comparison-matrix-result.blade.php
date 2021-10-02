@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{ asset('Dashboard/css/style3.css') }}">
   <link rel="stylesheet" href="{{ asset('Dashboard/css/comparison-matrix.css') }}">
   <link rel="stylesheet" href="{{ asset('Dashboard/css/tooltip-comparison.css') }}">
-  
+
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('Dashboard/images/favicon.png') }}" />
   <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome-free-5.14.0-web/css/all.css') }}">
@@ -68,17 +68,17 @@
                     <div class="card card-nav">
                       <div class="wrapper-nav stretch-nav">
                         <div class="ml-3" style="margin-top: 15px;">
-                          
+
                           <span class=""><a href="{{ url('/home') }}" style="text-decoration: none;" class="nav-title">Dashboard</a></span>
                           <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
-                            
+
                             <span class="ml-1"><a href="{{ url('/detail-project', $projectName['id']) }}" style="text-decoration: none;" class="nav-title">{{ $projectName['project_name'] }}</a></span>
-                           
+
                           <img class="ml-2 ml-1" src="{{asset('modalDocument/right.svg')}}">
                           <span class="nav-document-name ml-1"><input class="component-name" type="text" name="comparison_name" value="{{ $dataComparison['comparison_name'] }}"></span>
                           <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
-                          <a type="button" href="{{ url('/comparison-pdf', $dataComparison['id_project']) }}"><img class="ml-2 mb-1" src="{{asset('modalDocument/export.svg')}}"></a>
-                          @foreach ($dataProject as $list) 
+                          <a type="button" href="{{ route('cetak-lean-canvas', $dataComparison['id_project']) }}"><img class="ml-2 mb-1" src="{{asset('modalDocument/export.svg')}}"></a>
+                          @foreach ($dataProject as $list)
                           <a type="button" data-toggle="modal" data-target="#inviteMember-{{$list->id}}" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/add member.svg')}}"></a>
                           @endforeach
                         </div>
@@ -97,7 +97,7 @@
                         @php
                             $i = 0;
                         @endphp
-                        @foreach ($listComparison as $key => $data) 
+                        @foreach ($listComparison as $key => $data)
                           @php
                             if ( $i == 1 ) {
                           @endphp
@@ -314,7 +314,7 @@
                   <span><a href="#">Learn More</a></span>
                 </div>
               </div>
-                
+
             </div>
           </div>
         </div>
@@ -333,7 +333,7 @@
             </div>
             <div class="col-lg-6 ml-auto">
               <span class="font-invite-member" style="position: relative; top: 2rem;">
-                <center>Invite Member</center>                
+                <center>Invite Member</center>
               </span>
               <span class="font-sub-invite" style=""><center>Make sure that your member email has been registered in the application</center></span>
               <form method="POST" id="inviteMember" action="{{ url('/invite/member', $datas->id) }}"style="position: relative; padding-top: 4rem;">
@@ -341,7 +341,7 @@
                 <center><input type="text" class="input-invite-member" placeholder="Email" name="email"></center>
                 <input type="hidden" name="role" value="0">
                 <div class="btn-invite-position">
-                 <center><button type="submit" value="submit" class="btn-invite-member " for="inviteMember">Send Invitation</button></center> 
+                 <center><button type="submit" value="submit" class="btn-invite-member " for="inviteMember">Send Invitation</button></center>
                 </div>
               </form>
             </div>
@@ -376,23 +376,23 @@
   <script src="{{ asset('node_modules/node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
   <script src="{{ asset('node_modules/node_modules/shepherd.js/dist/js/shepherd.min.js') }}"></script>
   <script src="Scripts/jquery-1.3.2.js" type="text/javascript"></script>
- 
+
   <script type="text/javascript">
-   
+
     var i = 0;
-       
+
     $("#add").click(function(){
-   
+
         ++i;
         $("#dynamicTable").append('<tr><input type="hidden" name="addmore['+i+'][id_project]" value="{{ $projectName['id'] }}" class="form-control" /><input type="hidden" name="addmore['+i+'][comparison_name]" value="Comparison Matrix" class="form-control" /><td><span class="remove remove-row">x</span><input type="text" class="mt-1 aspect" name="addmore['+i+'][aspect]" placeholder="Aspect/Feature"></td><td><select id="emoji" name="addmore['+i+'][competitor1]" ><option class="emoji-style" value="&#x2714;">&#x2714;</option><option class="emoji-style" value="&#x274C;">&#x274C;</option></select></td><td><select id="emoji" name="addmore['+i+'][competitor2]" ><option class="emoji-style" value="&#x2714;">&#x2714;</option><option class="emoji-style" value="&#x274C;">&#x274C;</option></select></td><td><select id="emoji" name="addmore['+i+'][competitor3]"><option class="emoji-style" value="&#x2714;">&#x2714;</option><option class="emoji-style" value="&#x274C;">&#x274C;</option></select></td></tr>');
     });
-   
-    $(document).on('click', '.remove-row', function(){  
+
+    $(document).on('click', '.remove-row', function(){
          $(this).parents('tr').remove();
-    });  
-   
+    });
+
   </script>
-  
+
    <!-- <td><select id="emoji" name="addmore['+i+'][competitor4]" disabled><option class="emoji-style" value="&#x2714;">&#x2714;</option><option class="emoji-style" value="&#x274C;">&#x274C;</option></select></td><td><select id="emoji" name="addmore['+i+'][competitor5]" disabled><option class="emoji-style" value="&#x2714;">&#x2714;</option><option class="emoji-style" value="&#x274C;">&#x274C;</option></select></td><script type="text/javascript">
         $(document).on("click", "[data-column]", function () {
           var button = $(this),

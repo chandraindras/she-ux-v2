@@ -23,6 +23,18 @@ class SwotController extends Controller
         return view('swot', compact('dataSwot', 'projectName'));
     }
 
+    public function cetak(Request $request, $id)
+    {
+        $dataSwot = Swot::where('id_swot', $id)->get();
+        $projectName = DB::table('swots')
+            ->join('projects', 'swots.id_project', '=', 'projects.id')
+            ->where('swots.id_swot', '=', $id)
+            ->select('projects.project_name', 'projects.id')
+            ->get();
+        $pdf = PDF::loadview('swot_pdf',['dataSwot'=>$dataSwot, 'prjectName'=>$projectName]);
+        return $pdf->download('swot-pdf');
+    }
+
     public function store(Request $request, $id)
     {
         $swot = Swot::where('id_project', $id)->first();
@@ -59,7 +71,7 @@ class SwotController extends Controller
 	    			'strength' => $dataLama->strength.'+'.$request->input('strength')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -69,10 +81,10 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->strength;
     	$array= explode('+', $data);
- 
+
     	unset($array[$idArray]);
 		$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'strength' => $string
@@ -87,7 +99,7 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->strength;
     	$array= explode('+', $data);
-    	
+
     	foreach ($array as $key => $value) {
     		if($key == $idArray){
     			$array[$key] = $dataBaru;
@@ -96,7 +108,7 @@ class SwotController extends Controller
     	}
 
     	$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'strength' => $string
@@ -123,7 +135,7 @@ class SwotController extends Controller
 	    			'weakness' => $dataLama->weakness.'+'.$request->input('weakness')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -133,10 +145,10 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->weakness;
     	$array= explode('+', $data);
- 
+
     	unset($array[$idArray]);
 		$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'weakness' => $string
@@ -151,7 +163,7 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->weakness;
     	$array= explode('+', $data);
-    	
+
     	foreach ($array as $key => $value) {
     		if($key == $idArray){
     			$array[$key] = $dataBaru;
@@ -160,7 +172,7 @@ class SwotController extends Controller
     	}
 
     	$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'weakness' => $string
@@ -187,7 +199,7 @@ class SwotController extends Controller
 	    			'opportunity' => $dataLama->opportunity.'+'.$request->input('opportunity')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -197,10 +209,10 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->opportunity;
     	$array= explode('+', $data);
- 
+
     	unset($array[$idArray]);
 		$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'opportunity' => $string
@@ -215,7 +227,7 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->opportunity;
     	$array= explode('+', $data);
-    	
+
     	foreach ($array as $key => $value) {
     		if($key == $idArray){
     			$array[$key] = $dataBaru;
@@ -224,7 +236,7 @@ class SwotController extends Controller
     	}
 
     	$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'opportunity' => $string
@@ -250,7 +262,7 @@ class SwotController extends Controller
 	    			'threat' => $dataLama->threat.'+'.$request->input('threat')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -260,10 +272,10 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->threat;
     	$array= explode('+', $data);
- 
+
     	unset($array[$idArray]);
 		$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'threat' => $string
@@ -278,7 +290,7 @@ class SwotController extends Controller
     	$swot = Swot::where('id_swot', $idSwot)->first();
     	$data = $swot->threat;
     	$array= explode('+', $data);
-    	
+
     	foreach ($array as $key => $value) {
     		if($key == $idArray){
     			$array[$key] = $dataBaru;
@@ -287,7 +299,7 @@ class SwotController extends Controller
     	}
 
     	$string = implode('+', $array);
- 
+
     	$newData = Swot::where('id_swot', $idSwot);
     	$newData->update([
     		'threat' => $string

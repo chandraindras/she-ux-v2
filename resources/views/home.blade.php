@@ -175,12 +175,6 @@
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="icon-pie-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
-            </a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/faq') }}">
               <i class="icon-command menu-icon"></i>
@@ -193,6 +187,12 @@
               <span class="menu-title">Documentation</span>
             </a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/about-us') }}">
+                    <i class="icon-command menu-icon"></i>
+                    <span class="menu-title">About Us</span>
+                </a>
+            </li>
         </ul>
       </nav>
       <!-- partial -->

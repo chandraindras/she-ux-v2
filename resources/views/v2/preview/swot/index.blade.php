@@ -12,11 +12,6 @@
             <div class="row">
                 <div class="col-xl-10 offset-xl-1">
                     <p class="mb-5">SWOT is a business strategy building tool that is divided into 4 parts, consists of strengths, weaknesses that come from within your business and opportunities, threats that come from outside of your business.</p>
-{{--                    @foreach ($dataProject as $data)--}}
-{{--                    <form id="createSwot" method="POST" action="{{ url('/detail-project/swot/create', $data->id) }}">--}}
-{{--                        <a class="btn-solid-reg mb-5" value="submit" for="createSwot">Use Template</a>--}}
-{{--                    </form>--}}
-{{--                    @endforeach--}}
                     <a class="btn-solid-reg mb-5" value="submit" for="createSwot">Use Template</a>
                     <h2 class="mb-4">SWOT Template</h2>
                     <img class="img-fluid mb-5" src="{{asset('preview/images/SWOT.svg')}}" alt="alternative">

@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Comparison;
 use App\Lean;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Project;
 use DB;
+use PDF;
 
 class LeanCanvasController extends Controller
 {
@@ -19,6 +22,18 @@ class LeanCanvasController extends Controller
     						->select('projects.project_name', 'projects.id')
     						->get();
     	return view('lean_canvas', compact('dataLean', 'projectName'));
+    }
+
+    public function print(Request $request, $id)
+    {
+        $dataComparison = Comparison::where('id_project', $id)->first();
+        $projectName = Project::where('id', $id)->first();
+        $listComparison = Comparison::where('id_project', $id)->where('id_comparison', '!=', '$comparisonName[id_comparison]')->get();
+        $dataProject = Project::where('email_user','=',Auth::user()->email)->where('id', $id)->get();
+
+        $pdf = PDF::loadview('v2.export.leancanvas_pdf',['listComparison'=>$listComparison, 'projectName'=>$projectName,'dataProject'=>$dataProject,'dataComparison'=>$dataComparison]);
+
+        return $pdf->download('lean-canvas.pdf');
     }
 
     public function store(Request $request, $id)
@@ -57,7 +72,7 @@ class LeanCanvasController extends Controller
 	    			'problem' => $dataLama->problem.'+'.$request->input('problem')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -80,7 +95,7 @@ class LeanCanvasController extends Controller
 	    			'existing_alternative' => $dataLama->existing_alternative.'+'.$request->input('existing_alternative')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -103,7 +118,7 @@ class LeanCanvasController extends Controller
 	    			'solution' => $dataLama->solution.'+'.$request->input('solution')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -126,7 +141,7 @@ class LeanCanvasController extends Controller
 	    			'key_metric' => $dataLama->key_metric.'+'.$request->input('key_metric')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -149,7 +164,7 @@ class LeanCanvasController extends Controller
 	    			'unique_value' => $dataLama->unique_value.'+'.$request->input('unique_value')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -172,7 +187,7 @@ class LeanCanvasController extends Controller
 	    			'high_level_concept' => $dataLama->high_level_concept.'+'.$request->input('high_level_concept')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -195,7 +210,7 @@ class LeanCanvasController extends Controller
 	    			'unfair_advantage' => $dataLama->unfair_advantage.'+'.$request->input('unfair_advantage')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -218,7 +233,7 @@ class LeanCanvasController extends Controller
 	    			'channel' => $dataLama->channel.'+'.$request->input('channel')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -241,7 +256,7 @@ class LeanCanvasController extends Controller
 	    			'customer_segment' => $dataLama->customer_segment.'+'.$request->input('customer_segment')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -264,7 +279,7 @@ class LeanCanvasController extends Controller
 	    			'early_adopter' => $dataLama->early_adopter.'+'.$request->input('early_adopter')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -287,7 +302,7 @@ class LeanCanvasController extends Controller
 	    			'cost_structure' => $dataLama->cost_structure.'+'.$request->input('cost_structure')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }
@@ -310,7 +325,7 @@ class LeanCanvasController extends Controller
 	    			'revenue_stream' => $dataLama->revenue_stream.'+'.$request->input('revenue_stream')
 	    		]);
     		}
-    		
+
     		return redirect()->back();
     	}
     }

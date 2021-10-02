@@ -46,8 +46,9 @@
                           <img class="ml-2 ml-1" src="{{asset('modalDocument/right.svg')}}">
                           <span class="nav-document-name ml-1">{{ $swot->swot_name }}</span>
                           <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
-                          <img class="three ml-2 mb-1 example-css-selector-2" src="{{asset('modalDocument/export.svg')}}">
+                          <img class="three ml-2 mb-1 example-css-selector-2" src="{{asset('modalDocument/export.svg')}}" href="/cetak">
                           <a type="button" data-toggle="modal" data-target="#inviteMember-{{$project_name->id}}" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/add member.svg')}}"></a>
+                          <a type="button" data-toggle="modal" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/export.svg')}}" action="/cetak"></a>
                           @endforeach
                         </div>
                       </div>
@@ -91,8 +92,8 @@
                           <tbody>
                             @php
                                 $strength = explode('+', $data->strength);
-                            @endphp 
-                            @foreach ($strength as $key => $arrayStrength) 
+                            @endphp
+                            @foreach ($strength as $key => $arrayStrength)
                             <tr>
                               <td class="table-body" width="325">- {{ $arrayStrength }}</td>
                               <td>
@@ -135,8 +136,8 @@
                           <tbody>
                             @php
                                 $weakness = explode('+', $data->weakness);
-                            @endphp 
-                            @foreach ($weakness as $key => $arrayWeakness) 
+                            @endphp
+                            @foreach ($weakness as $key => $arrayWeakness)
                             <tr>
                               <td class="table-body" width="325">- {{ $arrayWeakness }}</td>
                               <td>
@@ -183,8 +184,8 @@
                           <tbody>
                             @php
                                 $opportunity = explode('+', $data->opportunity);
-                            @endphp 
-                            @foreach ($opportunity as $key => $arrayOpportunity) 
+                            @endphp
+                            @foreach ($opportunity as $key => $arrayOpportunity)
                             <tr>
                               <td class="table-body" width="325">- {{ $arrayOpportunity }}</td>
                               <td>
@@ -210,7 +211,7 @@
                     <div class="col-md-6 threat">
                       <img class="swot-icon" src="{{asset('modalDocument/warning.svg')}}" alt="Card image cap">
                       <span class="swot-title">Threat</span>
-                      <button class="tool question-position button-delete" style="text-align: justify;" data-tip="Threat is external factors over which you have no control and could adversely affect the product. Example (Case study : Driver Online) : 
+                      <button class="tool question-position button-delete" style="text-align: justify;" data-tip="Threat is external factors over which you have no control and could adversely affect the product. Example (Case study : Driver Online) :
                       1. Legal regulations are immature and may change later
                       2. There is people that has not been adaptive to change">
                         <i class="fas fa-question-circle"></i>
@@ -228,8 +229,8 @@
                           <tbody>
                             @php
                                 $threat = explode('+', $data->threat);
-                            @endphp 
-                            @foreach ($threat as $key => $arrayThreat) 
+                            @endphp
+                            @foreach ($threat as $key => $arrayThreat)
                             <tr>
                               <td class="table-body" width="325">- {{ $arrayThreat }}</td>
                               <td>
@@ -268,7 +269,7 @@
                   <span><a href="#">Learn More</a></span>
                 </div>
               </div>
-                
+
             </div>
           </div>
         </div>
@@ -288,9 +289,9 @@
         </div>
         @php
           $strength = explode('+', $data->strength);
-        @endphp 
+        @endphp
           <div class="modal-body">
-            @foreach ($strength as $key => $arrayStrength) 
+            @foreach ($strength as $key => $arrayStrength)
             <form method="POST" action="{{ url('/swot/edit-strength/'. $key.'/'. $data->id_swot) }}">
               @csrf
               <ul style="list-style-type: circle">
@@ -322,9 +323,9 @@
         </div>
         @php
           $weakness = explode('+', $data->weakness);
-        @endphp 
+        @endphp
           <div class="modal-body">
-            @foreach ($weakness as $key => $arrayWeakness) 
+            @foreach ($weakness as $key => $arrayWeakness)
             <form method="POST" action="{{ url('/swot/edit-weakness/'. $key.'/'. $data->id_swot) }}">
               @csrf
               <ul style="list-style-type: circle">
@@ -356,9 +357,9 @@
         </div>
         @php
           $threat = explode('+', $data->threat);
-        @endphp 
+        @endphp
           <div class="modal-body">
-            @foreach ($threat as $key => $arrayThreat) 
+            @foreach ($threat as $key => $arrayThreat)
             <form method="POST" action="{{ url('/swot/edit-threat/'. $key.'/'. $data->id_swot) }}">
               @csrf
               <ul style="list-style-type: circle">
@@ -390,9 +391,9 @@
         </div>
         @php
           $opportunity = explode('+', $data->opportunity);
-        @endphp 
+        @endphp
           <div class="modal-body">
-            @foreach ($opportunity as $key => $arrayOpportunity) 
+            @foreach ($opportunity as $key => $arrayOpportunity)
             <form method="POST" action="{{ url('/swot/edit-opportunity/'. $key.'/'. $data->id_swot) }}">
               @csrf
               <ul style="list-style-type: circle">
@@ -411,7 +412,7 @@
   </div>
   @endforeach
   <!-- END MODAL EDIT NEW DOCUMENT -->
-  
+
   @foreach ($projectName as $datas)
   <!-- modal-INVITE-member -->
   <div class="modal fade cd-example-modal-lg" id="inviteMember-{{$datas->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -424,7 +425,7 @@
             </div>
             <div class="col-lg-6 ml-auto">
               <span class="font-invite-member" style="position: relative; top: 2rem;">
-                <center>Invite Member</center>                
+                <center>Invite Member</center>
               </span>
               <span class="font-sub-invite" style=""><center>Make sure that your member email has been registered in the application</center></span>
               <form method="POST" id="inviteMember" action="{{ url('/invite/member', $datas->id) }}"style="position: relative; padding-top: 4rem;">
@@ -432,7 +433,7 @@
                 <center><input type="text" class="input-invite-member" placeholder="Email" name="email"></center>
                 <input type="hidden" name="role" value="0">
                 <div class="btn-invite-position">
-                 <center><button type="submit" value="submit" class="btn-invite-member " for="inviteMember">Send Invitation</button></center> 
+                 <center><button type="submit" value="submit" class="btn-invite-member " for="inviteMember">Send Invitation</button></center>
                 </div>
               </form>
             </div>
@@ -586,7 +587,7 @@
     </script> -->
   <script>
     $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip().tooltip('show');   
+      $('[data-toggle="tooltip"]').tooltip().tooltip('show');
     });
   </script>
 </body>

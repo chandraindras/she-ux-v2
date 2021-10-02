@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
     ],
 
     /*
@@ -233,5 +234,4 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
-
 ];
