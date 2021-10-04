@@ -36,6 +36,7 @@ class ComparisonMatrixController extends Controller
             'projectName' => $project->project_name
         ];
 
+//        dd($dataComparison);
         $pdf = PDF::loadview('v2.export.example_comparison_matrix_pdf',$data);
         return $pdf->download('comparison_matrix.pdf');
     }
