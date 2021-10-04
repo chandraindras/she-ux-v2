@@ -29,16 +29,14 @@ class ComparisonMatrixController extends Controller
 
     public function print(Request $request, $id)
     {
-        $dataComparison = Comparison::where('id_project', $id)->first();
-        $projectName = Project::where('id', $id)->first();
-        $countComparison = Comparison::where('id_project', $id)->count();
-        $dataProject = Project::where('email_user','=',Auth::user()->email)->where('id', $id)->get();
+        $dataComparison = Comparison::with('project')->where('id_project', $id)->get();
+        $project = Project::find($id);
         $data = [
-            'dataComparison'=>$dataComparison, 'projectName'=>$projectName, 'countComparison'=>$countComparison, '$dataProject'=>$dataProject
+            'dataComparison' => $dataComparison,
+            'projectName' => $project->project_name
         ];
-//        dd($dataProject);
 
-        $pdf = PDF::loadview('v2.export.comparison_matrix_pdf',$data);
+        $pdf = PDF::loadview('v2.export.example_comparison_matrix_pdf',$data);
         return $pdf->download('comparison_matrix.pdf');
     }
 
