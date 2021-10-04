@@ -39,16 +39,15 @@
                       <div class="wrapper-nav stretch-nav">
                         <div class="ml-3" style="margin-top: 15px;">
                           @foreach ($dataSwot as $swot)
-                          <span class=""><a href="{{ url('/home') }}" style="text-decoration: none;" class="nav-title">Dashboard</a></span>
-                          <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
+                              <span class=""><a href="{{ url('/home') }}" style="text-decoration: none;" class="nav-title">Dashboard</a></span>
+                              <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
                           @foreach ($projectName as $project_name)
-                            <span class="ml-1"><a href="{{ url('/detail-project', $project_name->id) }}" style="text-decoration: none;" class="nav-title">{{ $project_name->project_name }}</a></span>
-                          <img class="ml-2 ml-1" src="{{asset('modalDocument/right.svg')}}">
-                          <span class="nav-document-name ml-1">{{ $swot->swot_name }}</span>
-                          <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
-                          <img class="three ml-2 mb-1 example-css-selector-2" src="{{asset('modalDocument/export.svg')}}" href="/cetak">
-                          <a type="button" data-toggle="modal" data-target="#inviteMember-{{$project_name->id}}" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/add member.svg')}}"></a>
-                          <a type="button" data-toggle="modal" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/export.svg')}}" action="/cetak"></a>
+                              <span class="ml-1"><a href="{{ url('/detail-project', $project_name->id) }}" style="text-decoration: none;" class="nav-title">{{ $project_name->project_name }}</a></span>
+                              <img class="ml-2 ml-1" src="{{asset('modalDocument/right.svg')}}">
+                              <span class="nav-document-name ml-1">{{ $swot->swot_name }}</span>
+                              <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
+                              <a type="button" href="{{ route('cetak-swot', $swot['id_swot']) }}"><img class="ml-2 mb-1" src="{{asset('modalDocument/export.svg')}}"></a>
+                              <a type="button" data-toggle="modal" data-target="#inviteMember-{{$project_name->id}}" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/add member.svg')}}"></a>
                           @endforeach
                         </div>
                       </div>
@@ -63,20 +62,6 @@
                         <button class="tool question-position button-delete example-css-selector-4" style="text-align:justify;" data-tip="Strength is everything that can make you superior to other products. Example (Case study : driver online) : 1. The number of driver is large 2. Easily accessible in every area 3. Provides many services such as purchasing daily necessities, food" tabindex="2">
                         <i class="fas fa-question-circle"></i>
                         </button>
-                        <!-- <i class="fas fa-question-circle"></i>
-                          <div class="tooltip" style="width: 320px; height: 230px;">
-                            <br>
-                            <span style="text-align: justify-all; font-size: 14px;">Strength is everything that can make you superior to other products. </span>
-                            <br><br>
-                            <span style="font-weight: bold; font-size: 16px;">Example </span><span style="font-style: italic;">(Case study driver online)</span>
-                            <ul class="mt-1">
-                              <li>The number of driver is large</li>
-                              <li>Easily accessible in every area</li>
-                              <li>Provide job vacancies for other people</li>
-                              <li>Provides many services such as purchasing daily necessities, food</li>
-                            </ul>
-                          </div> -->
-                     <!--  </div> -->
                       <div class="container-form">
                         <form method="post" action="{{ url('/detail-project/swot/add-strength', $swot->id_swot) }}">
                           @csrf
@@ -269,7 +254,6 @@
                   <span><a href="#">Learn More</a></span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -439,10 +423,6 @@
             </div>
           </div>
         </div>
-<!--         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
       </div>
     </div>
   </div>
@@ -505,89 +485,15 @@
     tour.override('showStep', function(self, step) {
       self(step);
     })
-
     tour.override('end', function(self, step) {
       self(step);
     })
-
     tour.start();
   </script>
- <!--  <script type="text/javascript">
-        const tour = new Shepherd.Tour({
-          defaultStepOptions: {
-            classes: 'shepherd-theme-arrows',
-            scrollTo: true
-          }
-        });
-
-        tour.addStep({
-          id: 'example-step',
-          text: 'Use this button to add new data input.',
-          attachTo: {
-            element: '.example-css-selector',
-            on: 'bottom'
-          },
-          classes: 'example-step-extra-class',
-          buttons: [
-            {
-              text: 'Next',
-              action: tour.next
-            }
-          ]
-        });
-
-        tour.addStep({
-          id: 'example-step2',
-          text: 'To export a SWOT component, click on this icon.',
-          attachTo: {
-            element: '.example-css-selector-2',
-            on: 'bottom'
-          },
-          classes: 'example-step-extra-class',
-          buttons: [
-            {
-              text: 'Next',
-              action: tour.next
-            }
-          ]
-        });
-
-        tour.addStep({
-          id: 'example-step3',
-          text: 'You can invite other members who are registered with SheUX.',
-          attachTo: {
-            element: '.example-css-selector-3',
-            on: 'bottom'
-          },
-          classes: 'example-step-extra-class',
-          buttons: [
-            {
-              text: 'Next',
-              action: tour.next
-            }
-          ]
-        });
-
-        tour.addStep({
-          id: 'example-step4',
-          text: 'When you find it difficult to understand a term, just click on this icon.',
-          attachTo: {
-            element: '.example-css-selector-4',
-            on: 'bottom'
-          },
-          classes: 'example-step-extra-class',
-          buttons: [
-            {
-              text: 'Next',
-              action: tour.next
-            }
-          ]
-        });
-        tour.start();
-    </script> -->
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip().tooltip('show');
+      window.print();
     });
   </script>
 </body>

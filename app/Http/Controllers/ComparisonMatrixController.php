@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Swot;
 use Illuminate\Http\Request;
 use Validator;
 use App\Project;
@@ -26,6 +27,21 @@ class ComparisonMatrixController extends Controller
         }
     }
 
+    public function print(Request $request, $id)
+    {
+        $dataComparison = Comparison::where('id_project', $id)->first();
+        $projectName = Project::where('id', $id)->first();
+        $countComparison = Comparison::where('id_project', $id)->count();
+        $dataProject = Project::where('email_user','=',Auth::user()->email)->where('id', $id)->get();
+        $data = [
+            'dataComparison'=>$dataComparison, 'projectName'=>$projectName, 'countComparison'=>$countComparison, '$dataProject'=>$dataProject
+        ];
+//        dd($dataProject);
+
+        $pdf = PDF::loadview('v2.export.comparison_matrix_pdf',$data);
+        return $pdf->download('comparison_matrix.pdf');
+    }
+
     public function store(Request $request, $id)
     {
     	$comparison = Comparison::where('id_project', $id)->first();
@@ -35,9 +51,6 @@ class ComparisonMatrixController extends Controller
                 'id_project' => $id,
                 'comparison_name' => request('comparison_name')
             ]);
-
-            // $idComparison = Comparison::select('id_comparison')->where('id_project', $id)->first();
-
             return redirect()->route('comparison_matrix', [$id]);
         } else {
             return redirect()->back()->with('error', 'You Already Have Comparison Matrix ! You can only create one Comparison Matrix in each project !');
@@ -60,8 +73,6 @@ class ComparisonMatrixController extends Controller
 	                'competitor5' => $request->input('competitor5')
 	            ]);
 	        }
-    		
-    		// return redirect()->back();
     	}
     }
 
@@ -73,12 +84,12 @@ class ComparisonMatrixController extends Controller
             'addmore.*.competitor2' => 'required',
             'addmore.*.competitor3' => 'required',
         ]);
-    
+
         foreach ($request->addmore as $key => $value) {
             Comparison::create($value);
         }
 
-        return redirect()->route('comparison_matrix_result', [$idProject]);    
+        return redirect()->route('comparison_matrix_result', [$idProject]);
     }
 
     public function editMorePost(Request $request, $idProject)
@@ -87,7 +98,7 @@ class ComparisonMatrixController extends Controller
             DB::table('comparisons')->where('id_comparison', $member['id_comparison'])
                 ->update($member);
         }
-    
+
         foreach ($request->addmore as $key => $value) {
             Comparison::create($value);
         }

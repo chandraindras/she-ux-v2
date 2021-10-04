@@ -68,18 +68,15 @@
                     <div class="card card-nav">
                       <div class="wrapper-nav stretch-nav">
                         <div class="ml-3" style="margin-top: 15px;">
-
                           <span class=""><a href="{{ url('/home') }}" style="text-decoration: none;" class="nav-title">Dashboard</a></span>
                           <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
-
-                            <span class="ml-1"><a href="{{ url('/detail-project', $projectName['id']) }}" style="text-decoration: none;" class="nav-title">{{ $projectName['project_name'] }}</a></span>
-
+                          <span class="ml-1"><a href="{{ url('/detail-project', $projectName['id']) }}" style="text-decoration: none;" class="nav-title">{{ $projectName['project_name'] }}</a></span>
                           <img class="ml-2 ml-1" src="{{asset('modalDocument/right.svg')}}">
                           <span class="nav-document-name ml-1"><input class="component-name" type="text" name="comparison_name" value="{{ $dataComparison['comparison_name'] }}"></span>
                           <img class="ml-2" src="{{asset('modalDocument/right.svg')}}">
-                          <a type="button" href="{{ route('cetak-lean-canvas', $dataComparison['id_project']) }}"><img class="ml-2 mb-1" src="{{asset('modalDocument/export.svg')}}"></a>
+                          <a type="button" href="{{ route('cetak-comparison-matrix', $dataComparison['id_project']) }}"><img class="ml-2 mb-1" src="{{asset('modalDocument/export.svg')}}"></a>
                           @foreach ($dataProject as $list)
-                          <a type="button" data-toggle="modal" data-target="#inviteMember-{{$list->id}}" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/add member.svg')}}"></a>
+                            <a type="button" data-toggle="modal" data-target="#inviteMember-{{$list->id}}" class="color-primary"><img class="ml-2 example-css-selector-3" src="{{asset('modalDocument/add member.svg')}}"></a>
                           @endforeach
                         </div>
                       </div>

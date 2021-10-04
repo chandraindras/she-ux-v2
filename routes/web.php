@@ -71,6 +71,7 @@ Route::middleware(['auth'])->group(function(){
     Route::match(['get','post'], '/detail-project/swot/add-weakness/{id}', 'SwotController@addWeakness');
     Route::match(['get','post'], '/detail-project/swot/add-opportunity/{id}', 'SwotController@addOpportunity');
     Route::match(['get','post'], '/detail-project/swot/add-threat/{id}', 'SwotController@addThreat');
+    Route::get('/swot/cetak-pdf/{id}','SwotController@print')->name('cetak-swot');
 
     /*----------- USER STORY -----------*/
     Route::get('/detail-project/userStory/index/{id_project}/{id_story}', 'StoryController@index')->name('story');
@@ -134,6 +135,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/lean/destroy-early-adopter/{id}/{id_lean}', 'DeleteLeanController@destroyEarlyAdopter');
     Route::post('/lean/destroy-cost/{id}/{id_lean}', 'DeleteLeanController@destroyCostStructure');
     Route::post('/lean/destroy-revenue/{id}/{id_lean}', 'DeleteLeanController@destroyRevenueStream');
+    Route::get('/lean-canvas/cetak-pdf/{id}','LeanCanvasController@print')->name('cetak-lean-canvas');
 
     /*----------- COMPARISON MATRIX -----------*/
     Route::get('/detail-project/comparison-matrix/index/{id}', 'ComparisonMatrixController@index')->name('comparison_matrix');
@@ -163,7 +165,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/persona/edit-bio/{id}', 'UserPersonaController@editBio');
     Route::post('/persona/edit-media/{id}', 'UserPersonaController@editMedia');
     Route::post('/change-profile/{id}', 'UserController@editProfilePicture');
-    Route::get('/lean-canvas/cetak-pdf/{id}','LeanCanvasController@print')->name('cetak-lean-canvas');
+    Route::get('/comparison-matrix/cetak-pdf/{id}','ComparisonMatrixController@print')->name('cetak-comparison-matrix');
 });
 
 Route::get('/documentation', function () {

@@ -32,7 +32,6 @@ class LeanCanvasController extends Controller
         $dataProject = Project::where('email_user','=',Auth::user()->email)->where('id', $id)->get();
 
         $pdf = PDF::loadview('v2.export.leancanvas_pdf',['listComparison'=>$listComparison, 'projectName'=>$projectName,'dataProject'=>$dataProject,'dataComparison'=>$dataComparison]);
-
         return $pdf->download('lean-canvas.pdf');
     }
 

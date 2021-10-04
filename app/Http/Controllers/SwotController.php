@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Comparison;
 use App\Swot;
 use Illuminate\Http\Request;
 use Validator;
 use App\Project;
 use DB;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class SwotController extends Controller
 {
@@ -23,16 +25,17 @@ class SwotController extends Controller
         return view('swot', compact('dataSwot', 'projectName'));
     }
 
-    public function cetak(Request $request, $id)
+    public function print(Request $request, $id)
     {
         $dataSwot = Swot::where('id_swot', $id)->get();
         $projectName = DB::table('swots')
-            ->join('projects', 'swots.id_project', '=', 'projects.id')
-            ->where('swots.id_swot', '=', $id)
-            ->select('projects.project_name', 'projects.id')
-            ->get();
-        $pdf = PDF::loadview('swot_pdf',['dataSwot'=>$dataSwot, 'prjectName'=>$projectName]);
-        return $pdf->download('swot-pdf');
+                    ->join('projects', 'swots.id_project', '=', 'projects.id')
+                    ->where('swots.id_swot', '=', $id)
+                    ->select('projects.project_name', 'projects.id')
+                    ->get();
+
+        $pdf = PDF::loadview('v2.export.swot_pdf',['dataSwot'=>$dataSwot, 'projectName'=>$projectName]);
+        return $pdf->download('swot.pdf');
     }
 
     public function store(Request $request, $id)
